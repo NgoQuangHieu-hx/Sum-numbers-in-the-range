@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="a" placeholder="Enter a">
+    <br><br>
+    <input type="text" id="b" placeholder="Enter b">
+    <br><br>
+    <button onclick="caculate()">caculate</button>
+    <br>
+    <div id="result" style="margin-top: 1rem;"></div>
+</body>
+<script>
+    function caculate() {
+        let a = parseInt(document.getElementById('a').value);
+        let b = parseInt(document.getElementById('b').value);
+        let sum = 0;
+
+        if (a > b) {
+            let temp = a;
+            a = b;
+            b = temp
+        }
+        if (!Number.isInteger(a) || !Number.isInteger(b)) {
+            document.getElementById('result').innerHTML = 'Hãy nhập số';
+            return;
+        }
+        for (i = a + 1; i < b; i++) {
+            sum += i;
+        }
+        let result = 'Tổng trong khoảng từ ' + a + ' đến ' + b + ' là ' + sum;
+        document.getElementById('result').innerHTML = result;
+    }
+</script>
+
+</html>
